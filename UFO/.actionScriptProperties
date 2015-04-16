@@ -31,6 +31,7 @@
         </excludedEntries>
       </libraryPathEntry>
       <libraryPathEntry kind="3" linkType="1" path="C:/Users/Valeria/Documents/Progra 3/CEV3-1-10-Starling-Feathers-Nape.swc" useDefaultLinkType="false"/>
+      <libraryPathEntry kind="3" linkType="1" path="D:/Cenfotec/cuatri 4/Patrones/CEV3-1-10-Starling-Feathers-Nape.swc" useDefaultLinkType="false"/>
     </libraryPath>
     <sourceAttachmentPath/>
   </compiler>
@@ -48,6 +49,10 @@
       <airSettings airCertificatePath="" airTimestamp="true" anePathSet="false" version="1">
         <airExcludes/>
         <anePaths/>
+        <newLaunchParams/>
+        <modifiedLaunchParams/>
+        <newPackagingParams/>
+        <modifiedPackagingParams/>
       </airSettings>
       <actionScriptSettings version="1"/>
     </buildTarget>
