@@ -1,17 +1,21 @@
 package Objetos{
 	
-	import starling.display.Image;
-	import starling.textures.Texture;
+	import starling.display.Sprite;
 
-	public class ObjetoVolador extends Image{
+	public class ObjetoVolador extends Sprite{
 		
 		private var vida:int;
 		private var posicionY:int;
 		private var velocidad:int;
 		private var arma:AbstractArma;
 		
-		public function ObjetoVolador(imagen:Texture){
-			super(imagen)
+		public function ObjetoVolador(){
+			super();
+		}
+		
+		public function disparar():void{
+			
 		}
 	}
+	
 }

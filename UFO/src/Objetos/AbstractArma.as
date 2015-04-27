@@ -1,9 +1,9 @@
 package Objetos{
-	import starling.display.Sprite;
 
-	public class AbstractArma extends Sprite{
+	public class AbstractArma{
 		
-		public function AbstractArma(){
+		public function disparar():void{
+			//metodo abstracto
 		}
 	}
 }

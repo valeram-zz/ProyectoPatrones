@@ -4,7 +4,7 @@ package Objetos
 	{
 		public function Explosion()
 		{
-			super();
+			super(Assets.obtenerTextura("iniciar"));
 		}
 	}
 }
