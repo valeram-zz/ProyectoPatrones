@@ -1,8 +1,5 @@
 package{
 	
-	import flash.media.Sound;
-	import flash.net.URLRequest;
-	
 	import Pantallas.EventoNavegacion;
 	import Pantallas.PantallaJuego;
 	import Pantallas.PantallaPrincipal;
@@ -17,9 +14,7 @@ package{
 		
 		public function Main(){
 			addEventListener(Event.ADDED_TO_STAGE, agregadoAPantalla);
-			var req:URLRequest = new URLRequest("../media/music/DreamWalk.mp3"); 
-			var s:Sound = new Sound(req); 
-			s.play(0,2);
+		
 		}
 		
 		private function agregadoAPantalla():void{
@@ -41,6 +36,10 @@ package{
 				case "play":
 					menu.esconder();
 					juego.iniciar();
+					break;
+				case "menu":
+					juego.esconder();
+					menu.iniciar();
 					break;
 			}
 		}

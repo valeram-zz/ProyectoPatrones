@@ -3,6 +3,7 @@ package Pantallas
 	import flash.geom.Rectangle;
 	import flash.utils.getTimer;
 	
+	import Objetos.AbstractArma;
 	import Objetos.AbstractObstaculo;
 	import Objetos.AbstractPowerUp;
 	import Objetos.Enemigo;
@@ -11,13 +12,15 @@ package Pantallas
 	import Objetos.ObjetoVolador;
 	import Objetos.Ovni;
 	
-	import citrus.objects.platformer.nape.Platform;
-	
+	import starling.core.starling_internal;
 	import starling.display.Button;
+	import starling.display.Image;
 	import starling.display.Sprite;
 	import starling.events.Event;
+	import starling.events.KeyboardEvent;
 	import starling.events.Touch;
 	import starling.events.TouchEvent;
+	import starling.text.TextField;
 	import starling.utils.deg2rad;
 
 	public class PantallaJuego extends Sprite{
@@ -64,10 +67,22 @@ package Pantallas
 		//powerUps a usar
 		private var powerUps:Vector.<AbstractPowerUp>;
 		
+		//Puntaje y vida 
 		private var puntaje:Puntaje;
+		private var vida:TextField;
+		private var municion:TextField;
+		
+		//Opciones de partida perdido
+		private var reiniciar:Button;
+		
+		//arma
+		private var weapon:AbstractArma;
+		private var bullets:Vector.<Image>;
+		
 		
 		public function PantallaJuego(){
 			
+			addEventListener(starling.events.KeyboardEvent.KEY_DOWN,generarBalas);
 			addEventListener(Event.ADDED_TO_STAGE, agregadoAPantalla);
 			fabricaObstaculos = new FabricaObstaculos();
 			fabricaPowerUps = new FabricaPowerUps();
@@ -102,8 +117,18 @@ package Pantallas
 		private function agregadoAPantalla():void{
 			removeEventListener(Event.ADDED_TO_STAGE, agregadoAPantalla);			
 			inicializarJuego();
+			
 			puntaje = new Puntaje(300,100,"Puntaje: 0","MyFontName",24,0xFFFFFF);
+			
+			vida = new TextField(300,100,"Vida: 300","MyFontName",24 ,0xFFFFFF);
+			
+			municion = new TextField(300,100,"Municion: 0","MyFontName",24 ,0xFFFFFF);
+			
+			addChild(municion);
+			municion.x = 700;
 			addChild(puntaje);
+			vida.x = 400;
+			addChild(vida);
 		}
 		
 		private function inicializarJuego():void{
@@ -135,14 +160,17 @@ package Pantallas
 		
 		public function esconder():void
 		{
+			removeEventListener(TouchEvent.TOUCH,onTouch);
+			removeEventListener(Event.ENTER_FRAME, OnGameTick);
 			visible = false;			
+			
 		}
 		
 		public function iniciar():void
 		{
 			visible = true;
 				
-			addEventListener(Event.ENTER_FRAME, checkElapsed)
+			addEventListener(Event.ENTER_FRAME, checkElapsed);
 		
 			hero.x = -stage.stageWidth;
 			hero.y = stage.stageHeight * 0.5;
@@ -157,9 +185,11 @@ package Pantallas
 			distanciaRecorrida = 0;
 			obstacleGapCount = 0;
 			
+			btnIniciar.visible =true;
+			
 			enemigos = new Vector.<Enemigo>();
 			powerUps = new Vector.<AbstractPowerUp>();
-			
+			bullets = new Vector.<Image>();
 			btnIniciar.addEventListener(Event.TRIGGERED, botonIniciarSeleccionado);
 		}
 		
@@ -194,13 +224,15 @@ package Pantallas
 		private function OnGameTick(event:Event):void{
 			switch(estadoJuego){
 				case "idle":
+					hero.vida = 300;
+					hero.setMunicion(50);
 					//aparecer en pantalla
 					if(hero.x < stage.stageWidth * 0.5 * 0.5){
 						hero.x += ((stage.stageWidth * 0.5 * 0.5 + 10) - hero.x) * 0.05;
 						hero.y = stage.stageHeight * 0.5;
 						
 						velocidadJugador +=(MIN_SPEED - velocidadJugador) * 0.05;
-						bg.speed = velocidadJugador * elapsed;
+						bg.speed = velocidadJugador*2 * elapsed;
 						
 						
 						
@@ -243,20 +275,83 @@ package Pantallas
 					
 					puntaje.text = "Puntaje: "+distanciaRecorrida;
 					
+					municion.text = "Municion: "+hero.getMunicion();
+					
 					iniciarObstaculo();
 					animarObstaculos();
 					
 					crearPowerUps();
 					animarPowerUps();
 					
-				break;
+					calcularVida();
+					animarBullets();
+
 					
+				break;
+				
 				case "over":
+					
+					trace("morido");
+					removeEventListener(Event.ENTER_FRAME, checkElapsed);
+					velocidadJugador = 0;
+					bg.speed = velocidadJugador;
+					
+					dispatchEvent(new EventoNavegacion(EventoNavegacion.CHANGE_SCREEN,{id:"menu"},true));
 					
 				break;
 				
 			}
 			
+		}
+		
+		private function animarBullets():void
+		{
+			var bulletTracked:Image;
+			
+			for(var i:uint = 0; i< bullets.length;i++){
+				bulletTracked = bullets[i];
+				
+				bulletTracked.x += hero.getArma().velocidad * elapsed;
+				try{
+					if(bulletTracked.bounds.intersects(enemigos[0].bounds)){
+						hero.getArma().municion += 5;
+						bullets.splice(i,1);
+						removeChild(bulletTracked);
+						removeChild(enemigos[0]);
+						enemigos.splice(0,1);
+					}
+				}catch(Exception){
+					
+				}
+				
+				if(bulletTracked.x > stage.stageWidth+50){
+					bullets.splice(i,1);
+					removeChild(bulletTracked);
+				}
+				
+			}
+		}
+		
+		private function generarBalas(event:KeyboardEvent):void{
+			if(event.keyCode == 32 && hero.getArma().municion > 0){
+				hero.disparar();
+				var bullet:Image;
+				bullet = new Image(Assets.obtenerTextura("laser"));
+				bullet.x = hero.x+10;
+				bullet.y = hero.y;
+				
+				addChild(bullet);
+				
+				bullets.push(bullet);
+				
+			}
+		}		
+		
+		private function calcularVida():void
+		{
+			if(hero.vida<=0){
+				//estadoJuego = "over";
+			}
 		}
 		
 		private function animarPowerUps():void
@@ -269,6 +364,7 @@ package Pantallas
 				powerUpASeguir.x -= velocidadJugador * elapsed;
 				
 				if(powerUpASeguir.bounds.intersects(hero.bounds)){
+					hero.getArma().municion += 5;
 					powerUps.splice(i,1);
 					removeChild(powerUpASeguir);
 				}
@@ -284,7 +380,7 @@ package Pantallas
 		
 		private function crearPowerUps():void
 		{
-			if(Math.random() > 0.95){
+			if(Math.random() > 0.100){
 				var powerUp:AbstractPowerUp;
 				powerUp = fabricaPowerUps.crearPowerUp(1);//posibles valores 1 y 2
 				powerUp.x = stage.width +50;
@@ -319,6 +415,11 @@ package Pantallas
 					enemigoASeguir.rotation = deg2rad(70);
 					golpeObstaculo = 30;
 					velocidadJugador *=0.5;
+					
+					hero.vida -= enemigoASeguir.damage;
+					
+					trace(hero.vida);
+					vida.text = "Vida: "+hero.vida;
 						
 				}
 				if(enemigoASeguir.distancia>0){

@@ -28,6 +28,11 @@ package{
 		[Embed(source="../Media/objetos/shield.png")]
 		public static const escudo:Class;
 		
+		[Embed(source="../Media/objetos/ammo.png")]
+		public static const ammo:Class;
+		
+		[Embed(source="../Media/objetos/laser.png")]
+		public static const laser:Class;
 		
 		
 		[Embed(source="../Media/objetos/ufo.png")]

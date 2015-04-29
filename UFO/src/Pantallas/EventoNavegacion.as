@@ -8,7 +8,7 @@ package Pantallas{
 		public var  params:Object;	
 			
 		public function EventoNavegacion(type:String,_params:Object = null, bubles:Boolean=false){
-			super(type,bubles)
+			super(type,bubles);
 			params = _params;
 			
 		}

@@ -9,23 +9,17 @@ package Objetos
 	import starling.events.Event;
 	
 	public class AbstractObstaculo extends Sprite{
-//		private var posicionX: int;
-//		private var posicionY: int;
-//		private var danio:int;
-//		private var imagen:Image;
+
 		private var _velocidad: Number = 20;
-//		private var imagen:Image;
 		private var distancia:int;
 		private var cuidado:Boolean;
 		private var golpeado:Boolean;
 		private var posicion:String;
 		private var animacion:starling.display.MovieClip;
-//		private var tipo:int;
 		
 		
 		public function AbstractObstaculo(){
 			super();
-//			this.tipo= ptipo;
 			this.addEventListener(starling.events.Event.ADDED_TO_STAGE, agregarImagen);
 			this.addEventListener(Event.ENTER_FRAME, moverObstaculo);
 		}

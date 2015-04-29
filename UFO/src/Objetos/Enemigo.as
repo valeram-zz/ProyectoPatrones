@@ -12,6 +12,7 @@ package Objetos{
 		private var _mensaje:Boolean; //alerta
 		private var _golpeado:Boolean; //deshabilita el listener cuando es true
 		private var _posicion:String; //posicion obstaculo en el vertical
+		private var _damage:int;//
 		private var imagenEnemigo:Image;
 		private var imagenEnemigoChocado:Image;
 		private var animacion:MovieClip;
@@ -24,15 +25,24 @@ package Objetos{
 			_distancia = pdistacia;
 			_mensaje = palerta;
 			_velocidad = pvelocidad;
-			
+			_damage = 100;
 			_golpeado = false;
 			
 			this.addEventListener(Event.ADDED_TO_STAGE, agregadoAPantalla);
-			
-//			this.addEventListener(Event.ENTER_FRAME, moverEnemigo);
+	
 			
 		}
 		
+		public function get damage():int
+		{
+			return _damage;
+		}
+
+		public function set damage(value:int):void
+		{
+			_damage = value;
+		}
+
 		public function get distancia():int
 		{
 			return _distancia;
@@ -60,9 +70,8 @@ package Objetos{
 
 		public function set golpeado(value:Boolean):void
 		{
-			trace(value)
 			_golpeado = value;
-			trace(value);
+			
 			if(value){
 				imagenEnemigoChocado.visible=true;
 				imagenEnemigo.visible=false;
@@ -98,7 +107,7 @@ package Objetos{
 		
 		private function agregarImagenGolpeado():void
 		{
-			imagenEnemigoChocado = new Image(Assets.obtenerTextura("ovniMalo2"));
+			imagenEnemigoChocado = new Image(Assets.obtenerTextura("ovniMalo1"));
 			imagenEnemigoChocado.visible = false;
 			addChild(imagenEnemigoChocado);
 		}
@@ -109,27 +118,6 @@ package Objetos{
 			addChild(imagenEnemigo);
 		}
 		
-//		private function agregarImagen(tipo:int):void{
-//			if(this.tipo==1){
-//			imagen= new Image(Assets.obtenerTextura("ovniMalo1"));
-//			addChild(imagen);
-//			}
-//			if(this.tipo==2){
-//				imagen= new Image(Assets.obtenerTextura("ovniMalo2"));
-//			addChild(imagen);
-//			}
-//				else if(this.tipo==3){
-//				imagen= new Image(Assets.obtenerTextura("ovniMalo3"));
-//			addChild(imagen);
-//				}
-//		}
-//		
-//		private function moverEnemigo(event:Event):void{
-//			this.x-=_velocidad;
-//		
-//		}
-//		
-
 		
 	}	
 }

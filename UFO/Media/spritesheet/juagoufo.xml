@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:496f35e82e2418595f81f53eb18ef74f:63329eb22fe72f10985eb32743681b06:effe1adbe43678104d0fbed523613256$ -->
+<TextureAtlas imagePath="juagoufo.png">
+    <SubTexture name="meteorito0001" x="2" y="2" width="200" height="200"/>
+    <SubTexture name="meteorito0002" x="204" y="2" width="200" height="200"/>
+    <SubTexture name="meteorito0003" x="406" y="2" width="200" height="200"/>
+    <SubTexture name="meteorito0004" x="608" y="2" width="200" height="200"/>
+    <SubTexture name="meteorito0005" x="810" y="2" width="200" height="200"/>
+    <SubTexture name="meteorito0006" x="1012" y="2" width="200" height="200"/>
+    <SubTexture name="meteorito0007" x="1214" y="2" width="200" height="200"/>
+    <SubTexture name="meteorito0008" x="2" y="204" width="200" height="200"/>
+    <SubTexture name="meteorito0009" x="204" y="204" width="200" height="200"/>
+    <SubTexture name="meteorito0010" x="406" y="204" width="200" height="200"/>
+    <SubTexture name="meteorito0011" x="608" y="204" width="200" height="200"/>
+    <SubTexture name="meteorito0012" x="810" y="204" width="200" height="200"/>
+    <SubTexture name="meteorito0013" x="1012" y="204" width="200" height="200"/>
+    <SubTexture name="meteorito0014" x="1214" y="204" width="200" height="200"/>
+    <SubTexture name="meteorito0015" x="2" y="406" width="200" height="200"/>
+    <SubTexture name="meteorito0016" x="204" y="406" width="200" height="200"/>
+    <SubTexture name="meteorito0017" x="406" y="406" width="200" height="200"/>
+    <SubTexture name="meteorito0018" x="608" y="406" width="200" height="200"/>
+    <SubTexture name="meteorito0019" x="810" y="406" width="200" height="200"/>
+    <SubTexture name="meteorito0020" x="2" y="2" width="200" height="200"/>
+    <SubTexture name="ovni3" x="1012" y="406" width="128" height="128"/>
+    <SubTexture name="ovni4" x="1142" y="406" width="128" height="128"/>
+    <SubTexture name="ovni5" x="1272" y="406" width="128" height="128"/>
+    <SubTexture name="ovni6" x="2" y="608" width="128" height="128"/>
+    <SubTexture name="ovni7" x="132" y="608" width="128" height="128"/>
+    <SubTexture name="ovni8" x="262" y="608" width="128" height="128"/>
+    <SubTexture name="ovni9" x="392" y="608" width="128" height="128"/>
+    <SubTexture name="ovniMorado (1)" x="522" y="608" width="128" height="128"/>
+    <SubTexture name="ovniMorado (10)" x="652" y="608" width="128" height="128"/>
+    <SubTexture name="ovniMorado (11)" x="782" y="608" width="128" height="128"/>
+    <SubTexture name="ovniMorado (12)" x="912" y="608" width="128" height="128"/>
+    <SubTexture name="ovniMorado (13)" x="1042" y="608" width="128" height="128"/>
+    <SubTexture name="ovniMorado (14)" x="1172" y="608" width="128" height="128"/>
+    <SubTexture name="ovniMorado (15)" x="1302" y="608" width="128" height="128"/>
+    <SubTexture name="ovniMorado (16)" x="2" y="738" width="128" height="128"/>
+    <SubTexture name="ovniMorado (17)" x="132" y="738" width="128" height="128"/>
+    <SubTexture name="ovniMorado (18)" x="262" y="738" width="128" height="128"/>
+    <SubTexture name="ovniMorado (19)" x="392" y="738" width="128" height="128"/>
+    <SubTexture name="ovniMorado (2)" x="522" y="738" width="128" height="128"/>
+    <SubTexture name="ovniMorado (20)" x="652" y="738" width="128" height="128"/>
+    <SubTexture name="ovniMorado (21)" x="782" y="738" width="128" height="128"/>
+    <SubTexture name="ovniMorado (22)" x="912" y="738" width="128" height="128"/>
+    <SubTexture name="ovniMorado (23)" x="1042" y="738" width="128" height="128"/>
+    <SubTexture name="ovniMorado (24)" x="1172" y="738" width="128" height="128"/>
+    <SubTexture name="ovniMorado (25)" x="1302" y="608" width="128" height="128"/>
+    <SubTexture name="ovniMorado (26)" x="1302" y="738" width="128" height="128"/>
+    <SubTexture name="ovniMorado (27)" x="2" y="868" width="128" height="128"/>
+    <SubTexture name="ovniMorado (28)" x="132" y="868" width="128" height="128"/>
+    <SubTexture name="ovniMorado (29)" x="262" y="868" width="128" height="128"/>
+    <SubTexture name="ovniMorado (3)" x="392" y="868" width="128" height="128"/>
+    <SubTexture name="ovniMorado (30)" x="652" y="608" width="128" height="128"/>
+    <SubTexture name="ovniMorado (31)" x="522" y="868" width="128" height="128"/>
+    <SubTexture name="ovniMorado (32)" x="652" y="868" width="128" height="128"/>
+    <SubTexture name="ovniMorado (33)" x="782" y="868" width="128" height="128"/>
+    <SubTexture name="ovniMorado (34)" x="912" y="868" width="128" height="128"/>
+    <SubTexture name="ovniMorado (35)" x="1042" y="868" width="128" height="128"/>
+    <SubTexture name="ovniMorado (36)" x="1172" y="868" width="128" height="128"/>
+    <SubTexture name="ovniMorado (37)" x="1302" y="868" width="128" height="128"/>
+    <SubTexture name="ovniMorado (38)" x="2" y="998" width="128" height="128"/>
+    <SubTexture name="ovniMorado (39)" x="132" y="998" width="128" height="128"/>
+    <SubTexture name="ovniMorado (4)" x="262" y="998" width="128" height="128"/>
+    <SubTexture name="ovniMorado (40)" x="392" y="998" width="128" height="128"/>
+    <SubTexture name="ovniMorado (5)" x="522" y="998" width="128" height="128"/>
+    <SubTexture name="ovniMorado (6)" x="652" y="998" width="128" height="128"/>
+    <SubTexture name="ovniMorado (7)" x="782" y="998" width="128" height="128"/>
+    <SubTexture name="ovniMorado (8)" x="912" y="998" width="128" height="128"/>
+    <SubTexture name="ovniMorado (9)" x="1042" y="998" width="128" height="128"/>
+    <SubTexture name="ovniMov0001" x="1172" y="998" width="128" height="128"/>
+    <SubTexture name="ovniMov0002" x="1302" y="998" width="128" height="128"/>
+    <SubTexture name="ovniMov0003" x="2" y="1128" width="128" height="128"/>
+    <SubTexture name="ovniMov0004" x="132" y="1128" width="128" height="128"/>
+    <SubTexture name="ovniMov0005" x="262" y="1128" width="128" height="128"/>
+    <SubTexture name="ovniMov0006" x="392" y="1128" width="128" height="128"/>
+    <SubTexture name="ovniMov0007" x="522" y="1128" width="128" height="128"/>
+    <SubTexture name="ovniMov0008" x="652" y="1128" width="128" height="128"/>
+    <SubTexture name="ovniMov0009" x="782" y="1128" width="128" height="128"/>
+    <SubTexture name="ovniMov0010" x="912" y="1128" width="128" height="128"/>
+    <SubTexture name="ovniMov0011" x="1042" y="1128" width="128" height="128"/>
+    <SubTexture name="ovniMov0012" x="1172" y="1128" width="128" height="128"/>
+    <SubTexture name="ovniMov0013" x="1302" y="1128" width="128" height="128"/>
+    <SubTexture name="ovniMov0014" x="2" y="1258" width="128" height="128"/>
+    <SubTexture name="ovniMov0015" x="132" y="1258" width="128" height="128"/>
+    <SubTexture name="ovniMov0016" x="262" y="1258" width="128" height="128"/>
+    <SubTexture name="ovniMov0017" x="392" y="1258" width="128" height="128"/>
+    <SubTexture name="ovniMov0018" x="522" y="1258" width="128" height="128"/>
+    <SubTexture name="ovniMov0019" x="652" y="1258" width="128" height="128"/>
+    <SubTexture name="ovniMov0020" x="782" y="1258" width="128" height="128"/>
+    <SubTexture name="ovniMov0021" x="652" y="1258" width="128" height="128"/>
+    <SubTexture name="ovniMov0022" x="522" y="1258" width="128" height="128"/>
+    <SubTexture name="ovniMov0023" x="912" y="1258" width="128" height="128"/>
+    <SubTexture name="ovniMov0024" x="262" y="1258" width="128" height="128"/>
+    <SubTexture name="ovniMov0025" x="1042" y="1258" width="128" height="128"/>
+    <SubTexture name="ovniMov0026" x="1172" y="1258" width="128" height="128"/>
+    <SubTexture name="ovniMov0027" x="1302" y="1128" width="128" height="128"/>
+    <SubTexture name="ovniMov0028" x="1172" y="1128" width="128" height="128"/>
+    <SubTexture name="ovniMov0029" x="1042" y="1128" width="128" height="128"/>
+    <SubTexture name="ovniMov0030" x="912" y="1128" width="128" height="128"/>
+    <SubTexture name="ovniMov0031" x="1302" y="1258" width="128" height="128"/>
+    <SubTexture name="ovniMov0032" x="2" y="1388" width="128" height="128"/>
+    <SubTexture name="ovniMov0033" x="132" y="1388" width="128" height="128"/>
+    <SubTexture name="ovniMov0034" x="262" y="1388" width="128" height="128"/>
+    <SubTexture name="ovniMov0035" x="392" y="1388" width="128" height="128"/>
+    <SubTexture name="ovniMov0036" x="522" y="1388" width="128" height="128"/>
+    <SubTexture name="ovniMov0037" x="652" y="1388" width="128" height="128"/>
+    <SubTexture name="ovniMov0038" x="782" y="1388" width="128" height="128"/>
+    <SubTexture name="ovniMov0039" x="912" y="1388" width="128" height="128"/>
+    <SubTexture name="ovniMov0040" x="1042" y="1388" width="128" height="128"/>
+    <SubTexture name="ovniVerde0001" x="1172" y="1388" width="128" height="128"/>
+    <SubTexture name="ovniVerde0002" x="1302" y="1388" width="128" height="128"/>
+    <SubTexture name="ovniVerde0003" x="2" y="1518" width="128" height="128"/>
+    <SubTexture name="ovniVerde0004" x="132" y="1518" width="128" height="128"/>
+    <SubTexture name="ovniVerde0005" x="262" y="1518" width="128" height="128"/>
+    <SubTexture name="ovniVerde0006" x="392" y="1518" width="128" height="128"/>
+    <SubTexture name="ovniVerde0007" x="522" y="1518" width="128" height="128"/>
+    <SubTexture name="ovniVerde0008" x="652" y="1518" width="128" height="128"/>
+    <SubTexture name="ovniVerde0009" x="782" y="1518" width="128" height="128"/>
+    <SubTexture name="ovniVerde0010" x="912" y="1518" width="128" height="128"/>
+    <SubTexture name="ovniVerde0011" x="1042" y="1518" width="128" height="128"/>
+    <SubTexture name="ovniVerde0012" x="1172" y="1518" width="128" height="128"/>
+    <SubTexture name="ovniVerde0013" x="1302" y="1518" width="128" height="128"/>
+    <SubTexture name="ovniVerde0014" x="2" y="1648" width="128" height="128"/>
+    <SubTexture name="ovniVerde0015" x="132" y="1648" width="128" height="128"/>
+    <SubTexture name="ovniVerde0016" x="262" y="1648" width="128" height="128"/>
+    <SubTexture name="ovniVerde0017" x="392" y="1648" width="128" height="128"/>
+    <SubTexture name="ovniVerde0018" x="522" y="1648" width="128" height="128"/>
+    <SubTexture name="ovniVerde0019" x="652" y="1648" width="128" height="128"/>
+    <SubTexture name="ovniVerde0020" x="782" y="1648" width="128" height="128"/>
+    <SubTexture name="ovniVerde0021" x="912" y="1648" width="128" height="128"/>
+    <SubTexture name="ovniVerde0022" x="1042" y="1648" width="128" height="128"/>
+    <SubTexture name="ovniVerde0023" x="1172" y="1648" width="128" height="128"/>
+    <SubTexture name="ovniVerde0024" x="1302" y="1648" width="128" height="128"/>
+    <SubTexture name="ovniVerde0025" x="2" y="1778" width="128" height="128"/>
+    <SubTexture name="ovniVerde0026" x="132" y="1778" width="128" height="128"/>
+    <SubTexture name="ovniVerde0027" x="262" y="1778" width="128" height="128"/>
+    <SubTexture name="ovniVerde0028" x="1172" y="1518" width="128" height="128"/>
+    <SubTexture name="ovniVerde0029" x="1042" y="1518" width="128" height="128"/>
+    <SubTexture name="ovniVerde0030" x="912" y="1518" width="128" height="128"/>
+    <SubTexture name="ovniVerde0031" x="392" y="1778" width="128" height="128"/>
+    <SubTexture name="ovniVerde0032" x="522" y="1778" width="128" height="128"/>
+    <SubTexture name="ovniVerde0033" x="652" y="1778" width="128" height="128"/>
+    <SubTexture name="ovniVerde0034" x="782" y="1778" width="128" height="128"/>
+    <SubTexture name="ovniVerde0035" x="912" y="1778" width="128" height="128"/>
+    <SubTexture name="ovniVerde0036" x="1042" y="1778" width="128" height="128"/>
+    <SubTexture name="ovniVerde0037" x="1172" y="1778" width="128" height="128"/>
+    <SubTexture name="ovniVerde0038" x="1302" y="1778" width="128" height="128"/>
+    <SubTexture name="ovniVerde0039" x="2" y="1908" width="128" height="128"/>
+    <SubTexture name="ovniVerde0040" x="132" y="1908" width="128" height="128"/>
+</TextureAtlas>

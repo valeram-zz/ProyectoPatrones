@@ -1,9 +1,6 @@
 package Pantallas
 {
-	
-	import flash.media.Sound;
-	import flash.net.URLRequest;
-	
+
 	import Objetos.ObjetoVolador;
 	import Objetos.Ovni;
 	
@@ -60,7 +57,6 @@ package Pantallas
 		private function clickEnMenuPrincipal(event:Event):void
 		{
 			var clickeado:Button = event.target as Button;
-			trace(clickeado == btnIniciar);
 			if(clickeado == btnIniciar){
 				dispatchEvent(new EventoNavegacion(EventoNavegacion.CHANGE_SCREEN,{id:"play"},true));
 			}else if(clickeado == btnInformacion){
