@@ -1,10 +1,12 @@
 package Objetos
 {
+	import starling.display.Image;
+
 	public class Explosion extends AbstractPowerUp
 	{
 		public function Explosion()
 		{
-			super(Assets.obtenerTextura("ammo"));
+			super(new Image(Assets.obtenerTextura("ammo")));
 		}
 	}
 }

@@ -12,7 +12,6 @@ package Pantallas
 	import Objetos.ObjetoVolador;
 	import Objetos.Ovni;
 	
-	import starling.core.starling_internal;
 	import starling.display.Button;
 	import starling.display.Image;
 	import starling.display.Sprite;
@@ -225,7 +224,7 @@ package Pantallas
 			switch(estadoJuego){
 				case "idle":
 					hero.vida = 300;
-					hero.setMunicion(50);
+					hero.setMunicion(10);
 					//aparecer en pantalla
 					if(hero.x < stage.stageWidth * 0.5 * 0.5){
 						hero.x += ((stage.stageWidth * 0.5 * 0.5 + 10) - hero.x) * 0.05;
@@ -292,17 +291,84 @@ package Pantallas
 				case "over":
 					
 					trace("morido");
-					removeEventListener(Event.ENTER_FRAME, checkElapsed);
-					velocidadJugador = 0;
-					bg.speed = velocidadJugador;
+//					for(var i:uint = 0; i < enemigos; i++)
+//					{
+//						if (enemigos[i] != null)
+//						{
+//							// Dispose the item temporarily.
+//							disposeItemTemporarily(i, itemsToAnimate[i]);
+//						}
+//					}
 					
-					dispatchEvent(new EventoNavegacion(EventoNavegacion.CHANGE_SCREEN,{id:"menu"},true));
+//					for(var j:uint = 0; j < obstaclesToAnimateLength; j++)
+//					{
+//						if (obstaclesToAnimate[j] != null)
+//						{
+//							// Dispose the obstacle temporarily.
+//							disposeObstacleTemporarily(j, obstaclesToAnimate[j]);
+//						}
+//					}
+//					
+//					for(var m:uint = 0; m < eatParticlesToAnimateLength; m++)
+//					{
+//						if (eatParticlesToAnimate[m] != null)
+//						{
+//							// Dispose the eat particle temporarily.
+//							disposeEatParticleTemporarily(m, eatParticlesToAnimate[m]);
+//						}
+//					}
+//					
+//					for(var n:uint = 0; n < windParticlesToAnimateLength; n++)
+//					{
+//						if (windParticlesToAnimate[n] != null)
+//						{
+//							// Dispose the wind particle temporarily.
+//							disposeWindParticleTemporarily(n, windParticlesToAnimate[n]);
+//						}
+//					}
+					
+					// Spin the hero.
+					hero.rotation -= deg2rad(30);
+					
+					// Make the hero fall.
+					
+					// If hero is still on screen, push him down and outside the screen. Also decrease his speed.
+					// Checked for +width below because width is > height. Just a safe value.
+					if (hero.y < stage.stageHeight + hero.width)
+					{
+						velocidadJugador -= velocidadJugador * elapsed;
+						hero.y += stage.stageHeight * elapsed; 
+					}
+					else
+					{
+						// Once he moves out, reset speed to 0.
+						velocidadJugador = 0;
+						
+						// Stop game tick.
+						this.removeEventListener(Event.ENTER_FRAME, OnGameTick);
+						
+						// Game over.
+						//gameOver();
+					}
+					
+					// Set the background's speed based on hero's speed.
+					bg.speed = Math.floor(velocidadJugador * elapsed);
+					
+					
 					
 				break;
 				
 			}
 			
 		}
+//		
+//		private function disposeItemTemporarily(i:uint, param1:Array):void
+//		{
+//			obstaclesToAnimate.splice(animateId, 1);
+//			obstaclesToAnimateLength--;
+//			obstaclesPool.checkIn(obstacle);
+//			
+//		}
 		
 		private function animarBullets():void
 		{
@@ -350,7 +416,7 @@ package Pantallas
 		private function calcularVida():void
 		{
 			if(hero.vida<=0){
-				//estadoJuego = "over";
+				estadoJuego = "over";
 			}
 		}
 		
@@ -380,9 +446,9 @@ package Pantallas
 		
 		private function crearPowerUps():void
 		{
-			if(Math.random() > 0.100){
+			if(Math.random() < 0.50){
 				var powerUp:AbstractPowerUp;
-				powerUp = fabricaPowerUps.crearPowerUp(1);//posibles valores 1 y 2
+				powerUp = fabricaPowerUps.crearPowerUp(2);//posibles valores 1 y 2
 				powerUp.x = stage.width +50;
 				powerUp.y = int(Math.random() *(gameArea.bottom - gameArea.top))+gameArea.top;
 				addChild(powerUp);

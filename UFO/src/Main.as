@@ -44,5 +44,19 @@ package{
 			}
 		}
 		
+		private function onInGameNavigation(event:EventoNavegacion):void
+		{
+			switch (event.params.id)
+			{
+				case "mainMenu":
+					menu.iniciar();
+					break;
+				case "about":
+					menu.iniciar();
+					//menu.showAbout();
+					break;
+			}
+		}
+		
 	}
 }

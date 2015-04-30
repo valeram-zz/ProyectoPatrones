@@ -9,13 +9,13 @@ package Objetos{
 		}
 		
 		
-		public function crearObstaculo(ptipo:String):AbstractObstaculo{
+		public function crearObstaculo(ptipo:int):AbstractObstaculo{
 			var obstaculo:AbstractObstaculo;
 			
-			if(ptipo=="Asteroide"){
+			if(ptipo==1){
 				obstaculo= new Asteroide();
 			}
-			else if(ptipo=="Cometa"){
+			else if(ptipo==2){
 				obstaculo= new Cometa();
 			}
 			return obstaculo;

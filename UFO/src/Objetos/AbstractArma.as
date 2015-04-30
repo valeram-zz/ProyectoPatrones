@@ -15,7 +15,7 @@ package Objetos{
 		public function AbstractArma(pimage:Image){
 			
 			imagen = pimage;
-			municion = 50;
+			municion = 0;
 			velocidad = 1000;
 			disparo = false;
 			
@@ -44,8 +44,6 @@ package Objetos{
 		public function disparar():void{
 			
 			municion--;
-			
-			trace(municion);
 			
 			if(municion>0){
 				disparo = true;
